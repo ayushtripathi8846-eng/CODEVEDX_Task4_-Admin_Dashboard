@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-800 antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+.sidebar-link {
+  @apply flex items-center gap-3 px-4 py-3 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-xl transition-all duration-200;
+}
+
+.sidebar-link.active {
+  @apply text-blue-600 bg-blue-50 font-medium;
+}
+
+.card {
+  @apply bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300;
+}
+
+.stat-card {
+  @apply bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300 p-6;
+}
+
+@layer base {
+  .dark body {
+    @apply bg-gray-900 text-gray-100;
+  }
+}
+
+@layer components {
+  .dark .sidebar-link {
+    @apply text-gray-300 hover:text-gray-100 hover:bg-gray-700;
+  }
+
+  .dark .sidebar-link.active {
+    @apply text-blue-300 bg-blue-900;
+  }
+
+  .dark .card {
+    @apply bg-gray-800;
+  }
+
+  .dark .stat-card {
+    @apply bg-gray-800;
+  }
+}
+
+/* Dark mode generic overrides */
+@layer components {
+  .dark .text-gray-500,
+  .dark .text-gray-600,
+  .dark .text-gray-800,
+  .dark .text-gray-400,
+  .dark .text-gray-700 {
+    @apply text-gray-300;
+  }
+
+  .dark .bg-gray-50,
+  .dark .bg-gray-100,
+  .dark .bg-gray-200,
+  .dark .bg-white {
+    @apply bg-gray-800;
+  }
+
+  .dark .bg-blue-50,
+  .dark .bg-green-50,
+  .dark .bg-purple-50,
+  .dark .bg-orange-50 {
+    @apply bg-gray-800;
+  }
+
+  .dark .border-gray-100,
+  .dark .border-gray-200,
+  .dark .border-gray-300 {
+    @apply border-gray-700;
+  }
+
+  .dark .divide-gray-100 {
+    @apply divide-gray-700;
+  }
+}
